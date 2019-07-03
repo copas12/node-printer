@@ -28,7 +28,8 @@
   },
   "scripts": {
     "preinstall": "npm install node-pre-gyp",
-    "install": "node-pre-gyp install --runtime=electron --dist-url=https://atom.io/download/atom-shell --target=4.0.3",
+    "install": "node-pre-gyp install --fallback-to-build",
+    "postinstall": "node-pre-gyp rebuild --runtime=electron --dist-url=https://atom.io/download/atom-shell --target=4.0.3"
     "test": "nodeunit test"
   },
   "binary": {
